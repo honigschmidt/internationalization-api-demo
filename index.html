@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+    <title>Internationalization API Demo</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <h1>Internationalization API Demo</h1>
+    <div class="container" id="comp_container">
+        <div class="header">String Comparator (Intl.Collator)</div>
+        <input id="comp_input_1" type="text" placeholder="String 1">
+        <input id="comp_input_2" type="text" placeholder="String 2">
+        <label for="comp_locale_selector">Locale:</label>
+        <select id="comp_locale_selector"></select>
+        <label for="comp_sens_selector">Sensitivity:</label>
+        <select id="comp_sens_selector">
+            <option value="accent">accent</option>
+            <option value="base">base</option>
+            <option value="case">case</option>
+            <option value="variant">variant</option>
+        </select>
+        <button id="comp_submit_btn">COMPARE</button>
+    </div>
+    <div class="container" id="dt_container">
+        <div class="header">Date & Time Formatter (Intl.DateTimeFormat)</div>
+        <label for="dt_year_selector">Year:</label>
+        <select id="dt_year_selector">
+            <option value="numeric">numeric</option>
+            <option value="2-digit">2-digit</option>
+        </select>
+        <label for="dt_month_selector">Month:</label>
+        <select id="dt_month_selector">
+            <option value="numeric">numeric</option>
+            <option value="22digit">22digit</option>
+            <option value="narrow">narrow</option>
+            <option value="short">short</option>
+        </select>
+        <label for="dt_day_selector">Day:</label>
+        <select id="dt_day_selector">
+            <option value="numeric">numeric</option>
+            <option value="2-digit">2-digit</option>
+        </select>
+        <label for="dt_hour_selector">Hour:</label>
+        <select id="dt_hour_selector">
+            <option value="numeric">numeric</option>
+            <option value="2-digit">2-digit</option>
+        </select>
+        <label for="dt_minute_selector">Minute:</label>
+        <select id="dt_minute_selector">
+            <option value="numeric">numeric</option>
+            <option value="2-digit">2-digit</option>
+        </select>
+        <label for="dt_second_selector">Second:</label>
+        <select id="dt_second_selector">
+            <option value="numeric">numeric</option>
+            <option value="2-digit">2-digit</option>
+        </select>
+        <label for="dt_weekday_selector">Weekday:</label>
+        <select id="dt_weekday_selector">
+            <option value="narrow">narrow</option>
+            <option value="short">short</option>
+            <option value="long">long</option>
+        </select>
+        <label for="dt_timezone_selector">Timezone:</label>
+        <select id="dt_timezone_selector">
+            <option value="short">short</option>
+            <option value="long">long</option>
+        </select>
+        <label for="dt_locale_selector">Locale:</label>
+        <select id="dt_locale_selector"></select>
+        <button id="dt_submit_btn">GET TIME</button>
+        <div id="dt_result_container">
+            <div id="dt_result"></div>
+        </div>
+    </div>
+    <div class="container" id="num_container">
+        <div class="header">Numeric Value Formatter (Intl.NumberFormat)</div>
+        <input id="num_input" type="number" placeholder="Value">
+        <select id="num_locale_selector" type="text">
+        </select>
+        <button id="num_submit_btn">FORMAT VALUE</button>
+        <div id="num_result_container">
+            <div id="num_result">0</div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

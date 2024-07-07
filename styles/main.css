@@ -1,0 +1,47 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#comp_container {
+    background-color: #C3FF93;
+}
+
+#dt_container {
+    background-color: #FFDB5C;
+}
+
+#dt_result_container, #num_result_container {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1px
+}
+
+#num_container {
+    background-color: #FFAF61;
+}
+
+.greenBG {
+    background-color: greenyellow;
+}
+
+.orangeBG {
+    background-color: orange;
+}
+
+.error {
+    border-color: red;
+}
