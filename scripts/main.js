@@ -1,3 +1,6 @@
+// TODO: Add more locales
+// TODO: Add more currencies via script
+
 function main() {
     const locales = ["en-US", "de-DE", "hu-HU"];
 
@@ -13,15 +16,25 @@ function main() {
 
     const numInput = document.querySelector("#num_input");
     const numLocaleSelector = document.querySelector("#num_locale_selector");
+    const numStyleSelector = document.querySelector("#num_style_selector");
+    const numCurrencySelector = document.querySelector("#num_currency_selector");
     const numSubmitBtn = document.querySelector("#num_submit_btn");
     const numResultField = document.querySelector("#num_result");
 
     compSubmitBtn.addEventListener("click", () => compare());
     dtSubmitBtn.addEventListener("click", () => dateTime());
+    numStyleSelector.addEventListener("change", () => {
+        if (numStyleSelector.value == "currency") {
+            numCurrencySelector.disabled = false;
+        } else {
+            numCurrencySelector.disabled = true;
+        }
+    })
     numSubmitBtn.addEventListener("click", () => formatNumber());
 
     generateLocaleLists(locales);
     dateTime();
+    numCurrencySelector.disabled = true;
 
     function compare() {
         const nameCollator = new Intl.Collator(compLocaleSelector.value, { sensitivity: compSensSelector.value });
@@ -57,11 +70,13 @@ function main() {
 
     function dateTime() {
         const actualDateTime = new Date();
+        var h12Format = document.querySelector("#dt_hour12_selector").value == "true";
         const formattedDateTime = new Intl.DateTimeFormat(dtLocaleSelector.value, {
             year: document.querySelector("#dt_year_selector").value,
             month: document.querySelector("#dt_month_selector").value,
             day: document.querySelector("#dt_day_selector").value,
             hour: document.querySelector("#dt_hour_selector").value,
+            hour12: h12Format,
             minute: document.querySelector("#dt_minute_selector").value,
             second: document.querySelector("#dt_second_selector").value,
             weekday: document.querySelector("#dt_weekday_selector").value,
@@ -71,7 +86,10 @@ function main() {
     }
 
     function formatNumber() {
-        const formattedValue = new Intl.NumberFormat("de-DE").format(numInput.value);
+        const formattedValue = new Intl.NumberFormat(numLocaleSelector.value, {
+            style: numStyleSelector.value,
+            currency: numCurrencySelector.value
+        }).format(numInput.value);
         numResultField.textContent = formattedValue;
     }
 

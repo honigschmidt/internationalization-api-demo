@@ -7,8 +7,8 @@
     <h1>Internationalization API Demo</h1>
     <div class="container" id="comp_container">
         <div class="header">String Comparator (Intl.Collator)</div>
-        <input id="comp_input_1" type="text" placeholder="String 1">
-        <input id="comp_input_2" type="text" placeholder="String 2">
+        <input id="comp_input_1" type="text" placeholder="Enter string to compare">
+        <input id="comp_input_2" type="text" placeholder="Enter string to compare">
         <label for="comp_locale_selector">Locale:</label>
         <select id="comp_locale_selector"></select>
         <label for="comp_sens_selector">Sensitivity:</label>
@@ -30,9 +30,10 @@
         <label for="dt_month_selector">Month:</label>
         <select id="dt_month_selector">
             <option value="numeric">numeric</option>
-            <option value="22digit">22digit</option>
+            <option value="2-digit">2-digit</option>
             <option value="narrow">narrow</option>
             <option value="short">short</option>
+            <option value="long">long</option>
         </select>
         <label for="dt_day_selector">Day:</label>
         <select id="dt_day_selector">
@@ -54,6 +55,11 @@
             <option value="numeric">numeric</option>
             <option value="2-digit">2-digit</option>
         </select>
+        <label for="dt_hour12_selector">Hour format:</label>
+        <select id="dt_hour12_selector">
+            <option value="false">24</option>
+            <option value="true">12</option>
+        </select>
         <label for="dt_weekday_selector">Weekday:</label>
         <select id="dt_weekday_selector">
             <option value="narrow">narrow</option>
@@ -74,8 +80,19 @@
     </div>
     <div class="container" id="num_container">
         <div class="header">Numeric Value Formatter (Intl.NumberFormat)</div>
-        <input id="num_input" type="number" placeholder="Value">
+        <input id="num_input" type="number" placeholder="Enter value">
+        <label for="num_locale_selector">Locale:</label>
         <select id="num_locale_selector" type="text">
+        </select>
+        <label for="num_style_selector">Style:</label>
+        <select id="num_style_selector">
+            <option value="decimal">decimal</option>
+            <option value="currency">currency</option>
+        </select>
+        <label for="num_currency_selector">Currency:</label>
+        <select id="num_currency_selector">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
         </select>
         <button id="num_submit_btn">FORMAT VALUE</button>
         <div id="num_result_container">
