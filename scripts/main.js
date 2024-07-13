@@ -1,8 +1,6 @@
-// TODO: Add more locales
-// TODO: Add more currencies via script
-
 function main() {
-    const locales = ["en-US", "de-DE", "hu-HU"];
+    const locales = ["en-US", "de-DE", "ja-JP"];
+    const currencies = ["USD", "EUR", "JPY"];
 
     const compInput1 = document.querySelector("#comp_input_1");
     const compInput2 = document.querySelector("#comp_input_2");
@@ -33,6 +31,7 @@ function main() {
     numSubmitBtn.addEventListener("click", () => formatNumber());
 
     generateLocaleLists(locales);
+    generateCurrencyList(currencies);
     dateTime();
     numCurrencySelector.disabled = true;
 
@@ -58,8 +57,8 @@ function main() {
                     compInput1.classList.add("greenBG");
                     break;
                 case 0:
-                    compInput1.classList.add("orangeBG");
-                    compInput2.classList.add("orangeBG");
+                    compInput1.classList.add("greenBG");
+                    compInput2.classList.add("greenBG");
                     break;
                 case -1:
                     compInput2.classList.add("greenBG");
@@ -105,9 +104,20 @@ function main() {
         });
     }
 
+    function generateCurrencyList(currencies) {
+        currencies.sort();
+        currencies.forEach(currency => {
+            let newOption = document.createElement("option");
+            newOption.textContent = currency;
+            newOption.value = currency;
+            numCurrencySelector.appendChild(newOption);
+        });
+        // numCurrencySelector
+    }
+
     function removeClasses(element) {
-        for (let singleClass of element.classList.values()) {
-            element.classList.remove(singleClass);
+        for (let classListValue of element.classList.values()) {
+            element.classList.remove(classListValue);
         }
     }
 }

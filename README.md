@@ -1,0 +1,1 @@
+Example of using the Internationalization API. Check screenshot for details.
