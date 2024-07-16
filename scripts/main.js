@@ -112,7 +112,6 @@ function main() {
             newOption.value = currency;
             numCurrencySelector.appendChild(newOption);
         });
-        // numCurrencySelector
     }
 
     function removeClasses(element) {
